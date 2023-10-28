@@ -43,8 +43,6 @@ Known Unsupported Commands:
 - thawunanchored
 - tpunanchored
 - autokeypress
-- addplugin
-- reloadplugin
 - console
 
 
