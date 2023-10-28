@@ -5,7 +5,7 @@ Exploit scripts (like IY) that you can build into your game
 > These scripts must be **LocalScripts** and they must be placed in **StarterGui**.
 
 
-## [Infinite Yield RC](https://github.com/MaxxusX/RC-Scripts/blob/main/Infinite%20Yield%20RC.lua)
+## [Infinite Yield RC](Infinite%20Yield%20RC.lua)
 > [!NOTE]
 > Not all commands and features are supported.
 <details>
