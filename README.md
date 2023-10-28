@@ -6,6 +6,7 @@ Exploit scripts (like IY) that you can build into your game
 
 
 ## [Infinite Yield RC](Infinite%20Yield%20RC.lua)
+### v0.8b
 > [!NOTE]
 > Not all commands and features are supported.
 <details>
