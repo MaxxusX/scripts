@@ -53,8 +53,6 @@ Exploit scripts (like IY) that you can build into your game
 - thawunanchored
 - tpunanchored
 - autokeypress
-- addplugin
-- reloadplugin
 - console
 <br><sub>These are just the ones I know of, please open an issue if you find one that isn't on this list.</sub>
 </details>
