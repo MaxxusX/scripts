@@ -1,9 +1,8 @@
 																																				--[[
 Infinite Yield RC - Roblox version of Infinite Yield
 
-Loadstring() must be enabled to use f3x, might fix that later.
-
 It does not support saving nor plugins.
+It also cannot copy things to your clipboard, so it'll just notify you instead.
 
 
 Known Unsupported Commands:
@@ -44,7 +43,7 @@ Known Unsupported Commands:
 - tpunanchored
 - autokeypress
 - console
-
+- f3x -- will be fixed in a later update
 
 
 
@@ -62,7 +61,7 @@ if not game:IsLoaded() then
 	notLoaded:Destroy()
 end
 
-currentVersion = '0.8b'
+currentVersion = '0.8b2'
 
 Players = game:GetService("Players")
 
@@ -1994,10 +1993,6 @@ function r15(plr)
 	end
 end
 
-function toClipboard(String)
-	notify('Unsupported Command','Infinite Yield RE does not support the clipboard')
-end
-
 function getHierarchy(obj)
 	local fullname
 	local period
@@ -3778,7 +3773,7 @@ end)
 
 CopyPath.MouseButton1Click:Connect(function()
 	if Path.Text ~= "" then
-		toClipboard(Path.Text)
+		notify('Path',Path.Text)
 	else
 		notify('Copy Path','Select a part to copy its path')
 	end
@@ -6224,13 +6219,13 @@ addcmd('serverinfo',{'info','sinfo'},function(args, speaker)
 		SINFOGUI.placeid.Text = "Place ID: " ..PlaceId
 
 		CopyApp.MouseButton1Click:Connect(function()
-			toClipboard(speaker.CharacterAppearanceId)
+			notify('Appearance ID',speaker.CharacterAppearanceId)
 		end)
 		CopyPlrID.MouseButton1Click:Connect(function()
-			toClipboard(speaker.UserId)
+			notify('User ID',speaker.UserId)
 		end)
 		CopyPlcID.MouseButton1Click:Connect(function()
-			toClipboard(PlaceId)
+			notify('Place ID',PlaceId)
 		end)
 
 		repeat
@@ -6256,7 +6251,7 @@ end)
 
 addcmd('jobid',{},function(args, speaker)
 	local jobId = 'Roblox.GameLauncher.joinGameInstance('..PlaceId..', "'..JobId..'")'
-	toClipboard(jobId)
+	notify('JobId',JobId)
 end)
 
 addcmd('notifyjobid',{},function(args, speaker)
@@ -7792,11 +7787,7 @@ addcmd('notifyfreecamposition',{'notifyfcpos'},function(args, speaker)
 end)
 
 addcmd('copyfreecamposition',{'copyfcpos'},function(args, speaker)
-	if fcRunning then
-		local X,Y,Z = workspace.CurrentCamera.CFrame.Position.X,workspace.CurrentCamera.CFrame.Position.Y,workspace.CurrentCamera.CFrame.Position.Z
-		local Format, Round = string.format, math.round
-		toClipboard(Format("%s, %s, %s", Round(X), Round(Y), Round(Z)))
-	end
+	execCmd('notifyfreecamposition')
 end)
 
 addcmd('gotocamera',{'gotocam','tocam'},function(args, speaker)
@@ -7979,14 +7970,16 @@ addcmd('btools',{},function(args, speaker)
 	for i = 1, 4 do
 		local Tool = Instance.new("HopperBin")
 		Tool.BinType = i
-		Tool.Name = randomString()
+		local toolname = tostring(Tool.BinType)
+		toolname = string.gsub(toolname, "Enum.BinType.", "");
+		Tool.Name = toolname
 		Tool.Parent = speaker:FindFirstChildOfClass("Backpack")
 	end
 end)
 
 addcmd('f3x',{'fex'},function(args, speaker)
-	loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
-	notify('Hey','This command uses loadstring(), if you didn\'t get the tool, make sure loadstrings are enabled in ServerScriptService.')
+	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use loadstring() on client)')
+	--loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
 end)
 
 addcmd('partpath',{'partname'},function(args, speaker)
@@ -8095,7 +8088,7 @@ addcmd('copyname',{'copyuser'},function(args, speaker)
 	local players = getPlayer(args[1], speaker)
 	for i,v in pairs(players) do
 		local name = tostring(Players[v].Name)
-		toClipboard(name)
+		notify('Name',name)
 	end
 end)
 
@@ -8108,11 +8101,7 @@ addcmd('userid',{'id'},function(args, speaker)
 end)
 
 addcmd('copyid',{'copyuserid'},function(args, speaker)
-	local players = getPlayer(args[1], speaker)
-	for i,v in pairs(players) do
-		local id = tostring(Players[v].UserId)
-		toClipboard(id)
-	end
+	execCmd('userid')
 end)
 
 addcmd('creatorid',{'creator'},function(args, speaker)
@@ -8126,14 +8115,7 @@ addcmd('creatorid',{'creator'},function(args, speaker)
 end)
 
 addcmd('copycreatorid',{'copycreator'},function(args, speaker)
-	if game.CreatorType == Enum.CreatorType.User then
-		toClipboard(game.CreatorId)
-		notify('Copied ID','Copied creator ID to clipboard')
-	elseif game.CreatorType == Enum.CreatorType.Group then
-		local OwnerID = GroupService:GetGroupInfoAsync(game.CreatorId).Owner.Id
-		toClipboard(OwnerID)
-		notify('Copied ID','Copied creator ID to clipboard')
-	end
+	execCmd('creatorid')
 end)
 
 addcmd('setcreatorid',{'setcreator'},function(args, speaker)
@@ -8156,11 +8138,7 @@ addcmd('appearanceid',{'aid'},function(args, speaker)
 end)
 
 addcmd('copyappearanceid',{'caid'},function(args, speaker)
-	local players = getPlayer(args[1], speaker)
-	for i,v in pairs(players) do
-		local aid = tostring(Players[v].CharacterAppearanceId)
-		toClipboard(aid)
-	end
+	execCmd('appearanceid')
 end)
 
 addcmd('norender',{},function(args, speaker)
@@ -9317,17 +9295,7 @@ addcmd('getposition',{'getpos','notifypos','notifyposition'},function(args, spea
 end)
 
 addcmd('copyposition',{'copypos'},function(args, speaker)
-	local players = getPlayer(args[1], speaker)
-	for i,v in pairs(players)do
-		local char = Players[v].Character
-		local pos = char and (getRoot(char) or char:FindFirstChildWhichIsA("BasePart"))
-		pos = pos and pos.Position
-		if not pos then
-			return notify('Getposition Error','Missing character')
-		end
-		local roundedPos = math.round(pos.X) .. ", " .. math.round(pos.Y) .. ", " .. math.round(pos.Z)
-		toClipboard(roundedPos)
-	end
+	execCmd('getposition')
 end)
 
 addcmd('walktopos',{'walktoposition'},function(args, speaker)
