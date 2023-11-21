@@ -1,7 +1,7 @@
 																																				--[[
 Infinite Yield RC - Roblox version of Infinite Yield
 
-MAKE SURE LOADSTRINGS ARE ENABLED IN ServerScriptService!!!!!!
+Loadstring() must be enabled to use f3x, might fix that later.
 
 It does not support saving nor plugins.
 
@@ -2810,7 +2810,7 @@ end
 saves()
 
 function updatesaves()
-	
+
 end
 
 eventEditor.SetOnEdited(updatesaves)
@@ -5820,7 +5820,7 @@ function addPlugin(name)
 end
 
 function deletePlugin(name)
-	
+
 end
 
 function refreshplugins(dontSave)
@@ -7986,6 +7986,7 @@ end)
 
 addcmd('f3x',{'fex'},function(args, speaker)
 	loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
+	notify('Hey','This command uses loadstring(), if you didn\'t get the tool, make sure loadstrings are enabled in ServerScriptService.')
 end)
 
 addcmd('partpath',{'partname'},function(args, speaker)
