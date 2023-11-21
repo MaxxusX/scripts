@@ -5180,7 +5180,9 @@ end)
 Cmdbar.PlaceholderText = "Command Bar ("..prefix..")"
 Cmdbar:GetPropertyChangedSignal("Text"):Connect(function()
 	if Cmdbar:IsFocused() then
-		IndexContents(Cmdbar.Text,true,true)
+		local textbutwithoutprefix = Cmdbar.Text
+		textbutwithoutprefix = string.gsub(textbutwithoutprefix, prefix, ""); -- remove the prefix
+		IndexContents(textbutwithoutprefix,true,true)
 	end
 end)
 
