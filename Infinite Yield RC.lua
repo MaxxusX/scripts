@@ -7,6 +7,8 @@ It also cannot copy things to your clipboard, so it'll just notify you instead.
 
 Known Unsupported Commands:
 
+- bang
+- naked
 - keepiy
 - serverhop
 - record
