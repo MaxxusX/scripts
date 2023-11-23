@@ -19,5 +19,5 @@ Exploit scripts (like IY) that you can build into your game
 > This does not support saving!
 
 * Pretty much the same as LinoriaLib.
-* Exept for saving.
+* Except for saving.
 * I did fix some things though, like not being able to access transparency from a callback in the colorpicker.
