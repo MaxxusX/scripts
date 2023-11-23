@@ -5813,7 +5813,7 @@ end)
 PluginsGUI = PluginEditor.background
 
 function addPlugin(name)
-	notify('Unsupported','Infinite Yield RE does not support Plugins.')
+	notify('Unsupported','Infinite Yield RC does not support Plugins.')
 end
 
 function deletePlugin(name)
@@ -5854,7 +5854,7 @@ end
 
 local PluginCache
 function LoadPlugin(val,startup)
-	notify('Unsupported','Infinite Yield RE does not support Plugins.')
+	notify('Unsupported','Infinite Yield RC does not support Plugins.')
 end
 
 function FindPlugins()
@@ -5880,7 +5880,7 @@ Add_3.MouseButton1Click:Connect(function()
 end)
 
 Plugins.MouseButton1Click:Connect(function()
-	notify('Unsupported','Infinite Yield RE does not support Plugins.')
+	notify('Unsupported','Infinite Yield RC does not support Plugins.')
 end)
 
 Close_4.MouseButton1Click:Connect(function()
@@ -5930,15 +5930,15 @@ addcmd('clraliases',{},function(args, speaker)
 end)
 
 addcmd('keepiy', {}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use queue_on_teleport)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use queue_on_teleport)')
 end)
 
 addcmd('unkeepiy', {}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use queue_on_teleport)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use queue_on_teleport)')
 end)
 
 addcmd('toggleunkeepiy', {}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use queue_on_teleport)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use queue_on_teleport)')
 end)
 
 local canOpenServerinfo = true
@@ -6299,7 +6299,7 @@ addcmd('autorejoin',{'autorj'},function(args, speaker)
 end)
 
 addcmd('serverhop',{'shop'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use httprequest)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use httprequest)')
 end)
 
 addcmd('joinplayer',{'joinp'},function(args, speaker)
@@ -7172,15 +7172,15 @@ addcmd('showiy',{'unhideiy'},function(args, speaker)
 end)
 
 addcmd('rec', {'record'}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to access CoreGUI)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to access CoreGUI)')
 end)
 
 addcmd('screenshot', {'scrnshot'}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to access CoreGUI)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to access CoreGUI)')
 end)
 
 addcmd('togglefs', {'togglefullscreen'}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to access CoreGUI)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to access CoreGUI)')
 end)
 
 addcmd('inspect', {'examine'}, function(args, speaker)
@@ -7191,21 +7191,21 @@ addcmd('inspect', {'examine'}, function(args, speaker)
 end)
 
 addcmd('savegame',{'saveplace'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use hookmetamethod)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use hookmetamethod)')
 end)
 
 
 addcmd('clearerror',{'clearerrors'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use ClearError())')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use ClearError())')
 end)
 
 addcmd('clientantikick',{'antikick'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use hookmetamethod)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use hookmetamethod)')
 end)
 
 allow_rj = true
 addcmd('clientantiteleport',{'antiteleport'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use hookmetamethod)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use hookmetamethod)')
 end)
 
 addcmd('allowrejoin',{'allowrj'},function(args, speaker)
@@ -7265,7 +7265,7 @@ addcmd('antilag',{'boostfps','lowgraphics'},function(args, speaker)
 end)
 
 addcmd('setfpscap', {'fpscap', 'maxfps'}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use setfpscap)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use setfpscap)')
 end)
 
 addcmd('notify',{},function(args, speaker)
@@ -7857,7 +7857,7 @@ addcmd('thirdp',{},function(args, speaker)
 end)
 
 addcmd('noclipcam', {'nccam'}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use setconstant)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use setconstant)')
 end)
 
 addcmd('maxzoom',{},function(args, speaker)
@@ -7980,7 +7980,7 @@ addcmd('btools',{},function(args, speaker)
 end)
 
 addcmd('f3x',{'fex'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use loadstring() on client)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use loadstring() on client)')
 	--loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
 end)
 
@@ -8010,11 +8010,11 @@ addcmd('replicationlag',{'backtrack'},function(args, speaker)
 end)
 
 addcmd('noprompts', {'nopurchaseprompts'}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to access CoreGui)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to access CoreGui)')
 end)
 
 addcmd('showprompts', {'nopurchaseprompts'}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to access CoreGui)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to access CoreGui)')
 end)
 
 promptNewRig = function(speaker, rig)
@@ -8152,11 +8152,11 @@ addcmd('render',{},function(args, speaker)
 end)
 
 addcmd('2022materials',{'use2022materials'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use sethiddenproperty)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use sethiddenproperty)')
 end)
 
 addcmd('2022materials',{'unuse2022materials'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use sethiddenproperty)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use sethiddenproperty)')
 end)
 
 addcmd('goto',{'to'},function(args, speaker)
@@ -8867,7 +8867,7 @@ addcmd('nolimbs',{'rlimbs'},function(args, speaker)
 end)
 
 addcmd('nohead',{'rhead','headless'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use sethiddenproperty)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use sethiddenproperty)')
 end)
 
 addcmd('noarms',{'rarms'},function(args, speaker)
@@ -9323,7 +9323,7 @@ addcmd('speed',{'ws','walkspeed'},function(args, speaker)
 end)
 
 addcmd('spoofspeed',{'spoofws','spoofwalkspeed'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use hookmetamethod)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use hookmetamethod)')
 end)
 
 addcmd('loopspeed',{'loopws'},function(args, speaker)
@@ -9355,7 +9355,7 @@ addcmd('unloopspeed',{'unloopws'},function(args, speaker)
 end)
 
 addcmd('spoofjumppower',{'spoofjp'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use hookmetamethod)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use hookmetamethod)')
 end)
 
 addcmd('loopjumppower',{'loopjp','loopjpower'},function(args, speaker)
@@ -9454,23 +9454,23 @@ addcmd('undab', {'unfedab'}, function(args, speaker)
 end)
 
 addcmd('console',{},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to access CoreGUI)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to access CoreGUI)')
 end)
 
 addcmd('explorer', {'dex'}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command, as I could not get dex working without exploit functions (which roblox does not have)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command, as I could not get dex working without exploit functions (which roblox does not have)')
 end)
 
 addcmd('olddex', {'odex'}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command.')
+	notify('Unsupported Command','Infinite Yield RC does not support this command.')
 end)
 
 addcmd('remotespy',{'rspy'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command, though I may add support in the future!')
+	notify('Unsupported Command','Infinite Yield RC does not support this command, though I may add support in the future!')
 end)
 
 addcmd('audiologger',{'alogger'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command.')
+	notify('Unsupported Command','Infinite Yield RC does not support this command.')
 end)
 
 local loopgoto = nil
@@ -9818,7 +9818,7 @@ addcmd('noclickdetectorlimits',{'nocdlimits','removecdlimits'},function(args, sp
 end)
 
 addcmd('fireclickdetectors',{'firecd','firecds'}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use fireclickdetector)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use fireclickdetector)')
 end)
 
 addcmd('noproximitypromptlimits',{'nopplimits','removepplimits'},function(args, speaker)
@@ -9830,16 +9830,16 @@ addcmd('noproximitypromptlimits',{'nopplimits','removepplimits'},function(args, 
 end)
 
 addcmd('fireproximityprompts',{'firepp'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use fireproximityprompt)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use fireproximityprompt)')
 end)
 
 local PromptButtonHoldBegan = nil
 addcmd('instantproximityprompts',{'instantpp'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use fireproximityprompt)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use fireproximityprompt)')
 end)
 
 addcmd('uninstantproximityprompts',{'uninstantpp'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use fireproximityprompt)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use fireproximityprompt)')
 end)
 
 addcmd('notifyping',{'ping'},function(args, speaker)
@@ -10013,11 +10013,11 @@ addcmd('unhatspin',{'unspinhats'},function(args, speaker)
 end)
 
 addcmd('clearhats',{'cleanhats'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use firetouchinterest)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use firetouchinterest)')
 end)
 
 addcmd('vr',{},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command.')
+	notify('Unsupported Command','Infinite Yield RC does not support this command.')
 end)
 
 addcmd('split',{},function(args, speaker)
@@ -10145,11 +10145,11 @@ end)
 
 local RS = RunService.RenderStepped
 addcmd('givetool', {'givetools'}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use firetouchinterest)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use firetouchinterest)')
 end)
 
 addcmd('touchinterests', {'touchinterest', 'firetouchinterests', 'firetouchinterest'}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use firetouchinterest)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use firetouchinterest)')
 end)
 
 addcmd('fullbright',{'fb','fullbrightness'},function(args, speaker)
@@ -10592,7 +10592,7 @@ addcmd('kill',{'fekill'},function(args, speaker)
 end)
 
 addcmd('handlekill', {'hkill'}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use firetouchinterest)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use firetouchinterest)')
 end)
 
 local hb = RunService.Heartbeat
@@ -10799,11 +10799,11 @@ end)
 
 autoclicking = false
 addcmd('autoclick',{},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use mouse1press)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use mouse1press)')
 end)
 
 addcmd('unautoclick',{'noautoclick'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use mouse1press)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use mouse1press)')
 end)
 
 addcmd('mousesensitivity',{'ms'},function(args, speaker)
@@ -10983,7 +10983,7 @@ addcmd('removeterrain',{'rterrain','noterrain'},function(args, speaker)
 end)
 
 addcmd('clearnilinstances',{'nonilinstances','cni'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use getnilinstances')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use getnilinstances')
 end)
 
 addcmd('destroyheight',{'dh'},function(args, speaker)
@@ -11005,15 +11005,15 @@ end)
 local freezingua = nil
 frozenParts = {}
 addcmd('freezeunanchored',{'freezeua'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use sethiddenproperty)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use sethiddenproperty)')
 end)
 
 addcmd('thawunanchored',{'thawua','unfreezeunanchored','unfreezeua'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use sethiddenproperty)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use sethiddenproperty)')
 end)
 
 addcmd('tpunanchored',{'tpua'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use sethiddenproperty)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use sethiddenproperty)')
 end)
 
 keycodeMap = {
@@ -11088,23 +11088,23 @@ autoKeyPressing = false
 cancelAutoKeyPress = nil
 
 addcmd('autokeypress',{'keypress'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use keypress)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use keypress)')
 end)
 
 addcmd('unautokeypress',{'noautokeypress','unkeypress','nokeypress'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support this command. (Attempted to use keypress)')
+	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use keypress)')
 end)
 
 addcmd('addplugin',{'plugin'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support Plugins')
+	notify('Unsupported Command','Infinite Yield RC does not support Plugins')
 end)
 
 addcmd('removeplugin',{'deleteplugin'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support Plugins')
+	notify('Unsupported Command','Infinite Yield RC does not support Plugins')
 end)
 
 addcmd('reloadplugin',{},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RE does not support Plugins')
+	notify('Unsupported Command','Infinite Yield RC does not support Plugins')
 end)
 
 addcmd('removecmd',{'deletecmd'},function(args, speaker)
