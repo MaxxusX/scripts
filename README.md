@@ -23,7 +23,6 @@ Exploit scripts (like IY) but without custom exploit functions
 # UI Libraries
 
 > [!TIP]
-> Usage:
 > These are module scripts, use them like this:
 > ```lua
 > local library = require(where u put the module script)
