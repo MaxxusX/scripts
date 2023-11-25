@@ -13,7 +13,7 @@ Exploit scripts (like IY) but without custom exploit functions
 > This does not support **plugins**, **saving**, or **some commands** *(see script for list of them)*
 
 * i changed a lot of things lol
-* like task.wait() instead of wait()
+* like `task.wait()` instead of `wait()`
 * added dab command
 * i dont even remember everythign i changed but i changed a lot of things
 * also improved readability and uncommited warcrimes
