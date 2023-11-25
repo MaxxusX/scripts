@@ -9,7 +9,7 @@ Exploit scripts (like IY) that you can build into your game
 
 # Basic Scripts
 
-## [Infinite Yield](Infinite%20Yield%20RC.lua)
+## [Infinite Yield](Infinite%20Yield.lua)
 > [!NOTE]
 > This does not support **plugins**, **saving**, or **some commands** *(see script for list of them)*
 
@@ -30,7 +30,7 @@ Exploit scripts (like IY) that you can build into your game
 > local library = require(where u put the module script)
 > ```
 
-## [Linoria](https://github.com/MaxxusX/RC-Scripts/raw/main/LinoriaLib%20RC.rbxm)
+## [Linoria](https://github.com/MaxxusX/RC-Scripts/raw/main/Linoria.rbxm)
 
 * i guess lolcat already did thus but whatver im better than him
 * Pretty much the same as LinoriaLib.
