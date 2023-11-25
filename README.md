@@ -5,14 +5,13 @@ Exploit scripts (like IY) that you can build into your game
 > These scripts must be **LocalScripts** and they must be placed in **StarterGui**.
 > None of these support saving.
 
+---
+
+# Basic Scripts
+
 ## [Infinite Yield](Infinite%20Yield%20RC.lua)
 > [!NOTE]
-> Not all commands and features are supported.
-
-### Unsupported features
-* Plugins
-* Saving
-* See script for unsupported commands
+> This does not support **plugins**, **saving**, or **some commands** *(see script for list of them)*
 
 * i changed a lot of things lol
 * like task.wait() instead of wait()
@@ -20,7 +19,7 @@ Exploit scripts (like IY) that you can build into your game
 * i dont even remember everythign i changed but i changed a lot of things
 * also improved readability and uncommited warcrimes
 
-
+---
 
 # UI Libraries
 
