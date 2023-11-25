@@ -38,7 +38,7 @@ Exploit scripts (like IY) that you can build into your game
 * Except for saving.
 * I did fix some things though, like not being able to access transparency from a callback in the colorpicker.
 
-## [Rayfield](https://github.com/MaxxusX/RC-Scripts/raw/main/LinoriaLib%20RC.rbxm)
+## [Rayfield](https://github.com/MaxxusX/RC-Scripts/raw/main/Rayfield.rbxm)
 
 * yeah its literally just rayfield.
 * i changed wait()s into task.wait()s
