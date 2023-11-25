@@ -1,13 +1,12 @@
 # RC-Scripts
-Exploit scripts (like IY) that you can build into your game
-
-> [!IMPORTANT]
-> These scripts must be **LocalScripts** and they must be placed in **StarterGui**.
-> None of these support saving.
+Exploit scripts (like IY) but without custom exploit functions
 
 ---
 
 # Basic Scripts
+
+> [!IMPORTANT]
+> These scripts must be **LocalScripts** and they must be placed in **StarterGui**.
 
 ## [Infinite Yield](Infinite%20Yield.lua)
 > [!NOTE]
