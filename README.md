@@ -1,5 +1,5 @@
-# RC-Scripts
-Exploit scripts (like IY) but without custom exploit functions
+# Roblox Scripts
+stuff like infinite yield and ui libs but they work in normal roblox, also just some other roblox scrips
 
 ---
 
