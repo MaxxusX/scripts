@@ -8,7 +8,7 @@ Exploit scripts (like IY) but without custom exploit functions
 > [!IMPORTANT]
 > These scripts must be **LocalScripts** and they must be placed in **StarterGui**.
 
-## [Infinite Yield](Infinite%20Yield.lua)
+## [Limitless Suspension (inf yield)](Limitless%20Suspension.lua)
 > [!NOTE]
 > This does not support **plugins**, **saving**, or **some commands** *(see script for list of them)*
 
