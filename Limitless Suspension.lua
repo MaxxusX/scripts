@@ -1,5 +1,5 @@
 																																				--[[
-Infinite Yield RC - Roblox version of Infinite Yield
+Limitless Suspension - Roblox version of Infinite Yield
 
 It does not support saving nor plugins.
 It also cannot copy things to your clipboard, so it'll just notify you instead.
@@ -7,9 +7,7 @@ It also cannot copy things to your clipboard, so it'll just notify you instead.
 
 Known Unsupported Commands:
 
-- bang
-- naked
-- keepiy
+- keepls
 - serverhop
 - record
 - screenshot
@@ -51,22 +49,25 @@ Known Unsupported Commands:
 
 
 
-devnote: search for 'Unsupported Command' to find commands IYRC doesn't support
+devnote: search for 'Unsupported Command' to find commands LS doesn't support
 
 																																				]]--
 
+isExecutor = _G.isExecutor or false
+LS_DEBUG = false
 
-IY_DEBUG = false
+COREGUI = isExecutor and game:GetService("CoreGui") or game.Players.LocalPlayer.PlayerGui
 
 if not game:IsLoaded() then
 	local notLoaded = Instance.new("Message")
-	notLoaded.Parent = game.Players.LocalPlayer.PlayerGui
-	notLoaded.Text = 'Infinite Yield RC is waiting for the game to load'
+	notLoaded.Parent = COREGUI
+	notLoaded.Text = 'Limitless Suspension is waiting for the game to load'
 	game.Loaded:Wait()
 	notLoaded:Destroy()
 end
 
-currentVersion = '0.8b3'
+currentVersion = '0.9'
+discord = "discord.gg/zhgVeJeKVR"
 
 Players = game:GetService("Players")
 
@@ -213,7 +214,7 @@ end
 PARENT = nil
 local Main = Instance.new("ScreenGui")
 Main.Name = randomString()
-Main.Parent = game.Players.LocalPlayer.PlayerGui
+Main.Parent = COREGUI
 PARENT = Main
 
 shade1 = {}
@@ -241,7 +242,7 @@ Title.BorderSizePixel = 0
 Title.Size = UDim2.new(0, 250, 0, 20)
 Title.Font = Enum.Font.SourceSans
 Title.TextSize = 18
-Title.Text = "Infinite Yield RC v" .. currentVersion
+Title.Text = "Limitless Suspension v" .. currentVersion
 
 do
 	local emoji = ({
@@ -1409,7 +1410,7 @@ About.Position = UDim2.new(0, 17, 0, 10)
 About.Size = UDim2.new(0, 187, 0, 49)
 About.Font = Enum.Font.SourceSans
 About.TextSize = 14
-About.Text = "Plugins are .iy files and should be located in the 'workspace' folder of your exploit."
+About.Text = "Plugins are .ls files and should be located in the 'workspace' folder of your exploit."
 About.TextColor3 = Color3.fromRGB(255, 255, 255)
 About.TextWrapped = true
 About.TextYAlignment = Enum.TextYAlignment.Top
@@ -1490,7 +1491,7 @@ PluginsHint.Position = UDim2.new(0, 25, 0, 40)
 PluginsHint.Size = UDim2.new(0, 200, 0, 50)
 PluginsHint.Font = Enum.Font.SourceSansItalic
 PluginsHint.TextSize = 16
-PluginsHint.Text = "Download plugins from the IY Discord (discord.io/infiniteyield)"
+PluginsHint.Text = "Download plugins from the maxxus Discord (" .. discord .. ")"
 PluginsHint.TextColor3 = Color3.new(1, 1, 1)
 PluginsHint.TextStrokeColor3 = Color3.new(1, 1, 1)
 PluginsHint.TextWrapped = true
@@ -1925,7 +1926,7 @@ ViewportTextBox.convert(Cmdbar).View.ZIndex = 10
 ViewportTextBox.convert(Cmdbar_2).View.ZIndex = 10
 ViewportTextBox.convert(Cmdbar_3).View.ZIndex = 10
 
-IYMouse = Players.LocalPlayer:GetMouse()
+LSMouse = Players.LocalPlayer:GetMouse()
 UserInputService = game:GetService("UserInputService")
 TweenService = game:GetService("TweenService")
 HttpService = game:GetService("HttpService")
@@ -2743,7 +2744,7 @@ reference = (function()
 		{111,"TextLabel",{BackgroundColor3=Color3.new(1,1,1),BackgroundTransparency=1,Font=3,Name="Text",Parent={105},Position=UDim2.new(0,8,0,148),Size=UDim2.new(1,-8,0,16),Text="Setting up 'goto $1' on the OnChatted event will teleport you to any player that chats.",TextColor3=Color3.new(1,1,1),TextSize=14,TextWrapped=true,TextXAlignment=0,TextYAlignment=0,ZIndex=10,}},
 		{112,"Frame",{BackgroundColor3=Color3.new(1,1,1),BackgroundTransparency=1,Name="Section",Parent={7},Size=UDim2.new(1,0,0,105),ZIndex=10,}},
 		{113,"TextLabel",{BackgroundColor3=Color3.new(1,1,1),BackgroundTransparency=1,Font=4,Name="Header",Parent={112},Position=UDim2.new(0,8,0,5),Size=UDim2.new(1,-8,0,20),Text="Get Further Help",TextColor3=Color3.new(1,1,1),TextSize=20,TextXAlignment=0,ZIndex=10,}},
-		{114,"TextLabel",{BackgroundColor3=Color3.new(1,1,1),BackgroundTransparency=1,Font=3,Name="Text",Parent={112},Position=UDim2.new(0,8,0,30),Size=UDim2.new(1,-8,0,32),Text="You can join the Discord server to get support with IY,  and read up on more documentation such as the Plugin API.",TextColor3=Color3.new(1,1,1),TextSize=14,TextWrapped=true,TextXAlignment=0,ZIndex=10,}},
+		{114,"TextLabel",{BackgroundColor3=Color3.new(1,1,1),BackgroundTransparency=1,Font=3,Name="Text",Parent={112},Position=UDim2.new(0,8,0,30),Size=UDim2.new(1,-8,0,32),Text="You can join the Discord server to get support with LS,  and read up on more documentation such as the Plugin API.",TextColor3=Color3.new(1,1,1),TextSize=14,TextWrapped=true,TextXAlignment=0,ZIndex=10,}},
 		{115,"Frame",{BackgroundColor3=Color3.new(0.1803921610117,0.1803921610117,0.1843137294054),BorderSizePixel=0,Name="Line",Parent={112},Position=UDim2.new(0,10,1,-1),Size=UDim2.new(1,-20,0,1),Visible=false,ZIndex=10,}},
 	})
 	for i,v in pairs(main.Content.List:GetDescendants()) do
@@ -2778,7 +2779,7 @@ defaultsettings = {
 	prefix = ';';
 	StayOpen = false;
 	espTransparency = 0.3;
-	keepIY = true;
+	keepLS = true;
 	logsEnabled = false;
 	jLogsEnabled = false;
 	aliases = {};
@@ -3040,7 +3041,7 @@ function CreateJoinLabel(plr,ID)
 	info2.Text = string.gsub(info2.Text, "Loading...", splitDates[2] .. "/" .. splitDates[3] .. "/" .. splitDates[1])
 end
 
-IYMouse.KeyDown:Connect(function(Key)
+LSMouse.KeyDown:Connect(function(Key)
 	if (Key == prefix) then
 		Cmdbar:CaptureFocus()
 		task.defer(function()
@@ -3154,7 +3155,7 @@ ColorsButton.MouseButton1Click:Connect(function()
 				local greenInput = pickerFrame.Green.Input
 				local blueInput = pickerFrame.Blue.Input
 
-				local mouse = IYMouse
+				local mouse = LSMouse
 
 				local hue, sat, val = 0, 0, 1
 				local red, green, blue = 1, 1, 1
@@ -3692,8 +3693,8 @@ for _, plr in pairs(Players:GetPlayers()) do
 end
 
 Players.PlayerRemoving:Connect(function(player)
-	if ESPenabled or CHMSenabled or game.Players.LocalPlayer.PlayerGui:FindFirstChild(player.Name .. '_LC') then
-		for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+	if ESPenabled or CHMSenabled or COREGUI:FindFirstChild(player.Name .. '_LC') then
+		for i,v in pairs(COREGUI:GetChildren()) do
 			if v.Name == player.Name .. '_ESP' or v.Name == player.Name .. '_LC' or v.Name == player.Name .. '_CHMS' then
 				v:Destroy()
 			end
@@ -3793,20 +3794,20 @@ local ClickSelect = nil
 function selectPart()
 	ToPartFrame:TweenPosition(UDim2.new(0.5, -180, 0, 335), Enum.EasingDirection.InOut, Enum.EasingStyle.Quart, 0.5, true, nil)
 	local function HighlightPart()
-		if selected.Adornee ~= IYMouse.Target then
-			selectionBox.Adornee = IYMouse.Target
+		if selected.Adornee ~= LSMouse.Target then
+			selectionBox.Adornee = LSMouse.Target
 		else
 			selectionBox.Adornee = nil
 		end
 	end
-	ActivateHighlight = IYMouse.Move:Connect(HighlightPart)
+	ActivateHighlight = LSMouse.Move:Connect(HighlightPart)
 	local function SelectPart()
-		if IYMouse.Target ~= nil then
-			selected.Adornee = IYMouse.Target
-			Path.Text = getHierarchy(IYMouse.Target)
+		if LSMouse.Target ~= nil then
+			selected.Adornee = LSMouse.Target
+			Path.Text = getHierarchy(LSMouse.Target)
 		end
 	end
-	ClickSelect = IYMouse.Button1Down:Connect(SelectPart)
+	ClickSelect = LSMouse.Button1Down:Connect(SelectPart)
 end
 
 Part.MouseButton1Click:Connect(function()
@@ -4135,11 +4136,11 @@ CMDs[#CMDs + 1] = {NAME = 'hideguis', DESC = 'Hides any GUIs in PlayerGui'}
 CMDs[#CMDs + 1] = {NAME = 'unhideguis', DESC = 'Undoes hideguis'}
 CMDs[#CMDs + 1] = {NAME = 'guidelete', DESC = 'Enables backspace to delete GUI'}
 CMDs[#CMDs + 1] = {NAME = 'unguidelete / noguidelete', DESC = 'Disables guidelete'}
-CMDs[#CMDs + 1] = {NAME = 'hideiy', DESC = 'Hides the main IY GUI'}
-CMDs[#CMDs + 1] = {NAME = 'showiy / unhideiy', DESC = 'Shows IY again'}
-CMDs[#CMDs + 1] = {NAME = 'keepiy', DESC = 'Auto execute IY when you teleport through servers'}
-CMDs[#CMDs + 1] = {NAME = 'unkeepiy', DESC = 'Disable keepiy'}
-CMDs[#CMDs + 1] = {NAME = 'togglekeepiy', DESC = 'Toggle keepiy'}
+CMDs[#CMDs + 1] = {NAME = 'hidels', DESC = 'Hides the main LS GUI'}
+CMDs[#CMDs + 1] = {NAME = 'showls / unhidels', DESC = 'Shows LS again'}
+CMDs[#CMDs + 1] = {NAME = 'keepls', DESC = 'Auto execute LS when you teleport through servers'}
+CMDs[#CMDs + 1] = {NAME = 'unkeepls', DESC = 'Disable keepls'}
+CMDs[#CMDs + 1] = {NAME = 'togglekeepls', DESC = 'Toggle keepls'}
 CMDs[#CMDs + 1] = {NAME = 'savegame / saveplace', DESC = 'Uses saveinstance to save the game'}
 CMDs[#CMDs + 1] = {NAME = 'clearerror', DESC = 'Clears the annoying box and blur when a game kicks you'}
 CMDs[#CMDs + 1] = {NAME = 'clientantikick / antikick (CLIENT)', DESC = 'Prevents localscripts from kicking you'}
@@ -4322,6 +4323,8 @@ CMDs[#CMDs + 1] = {NAME = 'userid / id [plr]', DESC = 'Notifies a players user I
 CMDs[#CMDs + 1] = {NAME = 'copyuserid / copyid [plr]', DESC = 'Copies a players user ID to your clipboard'}
 CMDs[#CMDs + 1] = {NAME = 'appearanceid / aid [plr]', DESC = 'Notifies a players appearance ID'}
 CMDs[#CMDs + 1] = {NAME = 'copyappearanceid / caid [plr]', DESC = 'Copies a players appearance ID to your clipboard'}
+CMDs[#CMDs + 1] = {NAME = 'bang [plr] [speed]', DESC = 'owo'}
+CMDs[#CMDs + 1] = {NAME = 'unbang', DESC = 'uwu'}
 CMDs[#CMDs + 1] = {NAME = 'carpet [plr]', DESC = 'Be someones carpet'}
 CMDs[#CMDs + 1] = {NAME = 'uncarpet', DESC = 'Undoes carpet'}
 CMDs[#CMDs + 1] = {NAME = 'friend [plr]', DESC = 'Sends a friend request to certain players'}
@@ -4400,6 +4403,7 @@ CMDs[#CMDs + 1] = {NAME = 'nohead / headless', DESC = 'Removes your head (uses s
 CMDs[#CMDs + 1] = {NAME = 'noarms', DESC = 'Removes your arms'}
 CMDs[#CMDs + 1] = {NAME = 'nolegs', DESC = 'Removes your legs'}
 CMDs[#CMDs + 1] = {NAME = 'nolimbs', DESC = 'Removes your limbs'}
+CMDs[#CMDs + 1] = {NAME = 'naked (CLIENT)', DESC = 'Removes your clothing'}
 CMDs[#CMDs + 1] = {NAME = 'noface / removeface', DESC = 'Removes your face'}
 CMDs[#CMDs + 1] = {NAME = 'blockhead', DESC = 'Turns your head into a block'}
 CMDs[#CMDs + 1] = {NAME = 'blockhats', DESC = 'Turns your hats into blocks'}
@@ -4521,7 +4525,7 @@ IndexContents("", true)
 
 function checkTT()
 	local t
-	local guisAtPosition = game.Players.LocalPlayer.PlayerGui:GetGuiObjectsAtPosition(IYMouse.X, IYMouse.Y)
+	local guisAtPosition = game.Players.LocalPlayer.PlayerGui:GetGuiObjectsAtPosition(LSMouse.X, LSMouse.Y)
 
 	for _, gui in pairs(guisAtPosition) do
 		if gui.Parent == CMDsF then
@@ -4530,16 +4534,16 @@ function checkTT()
 	end
 
 	if t ~= nil and t:GetAttribute("Title") ~= nil then
-		local x = IYMouse.X
-		local y = IYMouse.Y
+		local x = LSMouse.X
+		local y = LSMouse.Y
 		local xP
 		local yP
-		if IYMouse.X > 200 then
+		if LSMouse.X > 200 then
 			xP = x - 201
 		else
 			xP = x + 21
 		end
-		if IYMouse.Y > (IYMouse.ViewSizeY-96) then
+		if LSMouse.Y > (LSMouse.ViewSizeY-96) then
 			yP = y - 97
 		else
 			yP = y
@@ -4739,7 +4743,7 @@ function execCmd(cmdStr, speaker, store)
 				if infTimes then
 					while lastBreakTime < cmdStartTime do
 						local success, err = pcall(cmd.FUNC, args, speaker)
-						if not success and IY_DEBUG then
+						if not success and LS_DEBUG then
 							warn("Command Error:", cmdName, err)
 						end
 						task.wait(cmdDelay)
@@ -4750,7 +4754,7 @@ function execCmd(cmdStr, speaker, store)
 						local success, err = pcall(function()
 							cmd.FUNC(args, speaker)
 						end)
-						if not success and IY_DEBUG then
+						if not success and LS_DEBUG then
 							warn("Command Error:", cmdName, err)
 						end
 						if cmdDelay ~= 0 then task.wait(cmdDelay) end
@@ -4836,7 +4840,7 @@ local WorldToScreen = function(Object)
 end
 
 local MousePositionToVector2 = function()
-	return Vector2.new(IYMouse.X, IYMouse.Y)
+	return Vector2.new(LSMouse.X, LSMouse.Y)
 end
 
 local GetClosestPlayerFromCursor = function()
@@ -5288,16 +5292,16 @@ end
 
 function ESP(plr)
 	task.spawn(function()
-		for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+		for i,v in pairs(COREGUI:GetChildren()) do
 			if v.Name == plr.Name .. '_ESP' then
 				v:Destroy()
 			end
 		end
 		task.wait()
-		if plr.Character and plr.Name ~= Players.LocalPlayer.Name and not game.Players.LocalPlayer.PlayerGui:FindFirstChild(plr.Name .. '_ESP') then
+		if plr.Character and plr.Name ~= Players.LocalPlayer.Name and not COREGUI:FindFirstChild(plr.Name .. '_ESP') then
 			local ESPholder = Instance.new("Folder")
 			ESPholder.Name = plr.Name .. '_ESP'
-			ESPholder.Parent = game.Players.LocalPlayer.PlayerGui
+			ESPholder.Parent = COREGUI
 			repeat task.wait(1) until plr.Character and getRoot(plr.Character) and plr.Character:FindFirstChildOfClass("Humanoid")
 			for b,n in pairs (plr.Character:GetChildren()) do
 				if (n:IsA("BasePart")) then
@@ -5361,7 +5365,7 @@ function ESP(plr)
 					end
 				end)
 				local function espLoop()
-					if game.Players.LocalPlayer.PlayerGui:FindFirstChild(plr.Name..'_ESP') then
+					if COREGUI:FindFirstChild(plr.Name .. '_ESP') then
 						if plr.Character and getRoot(plr.Character) and plr.Character:FindFirstChildOfClass("Humanoid") and Players.LocalPlayer.Character and getRoot(Players.LocalPlayer.Character) and Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
 							local pos = math.floor((getRoot(Players.LocalPlayer.Character).Position - getRoot(plr.Character).Position).magnitude)
 							TextLabel.Text = 'Name: ' .. plr.Name .. ' | Health: ' .. round(plr.Character:FindFirstChildOfClass('Humanoid').Health, 1) .. ' | Studs: ' .. pos
@@ -5380,16 +5384,16 @@ end
 
 function CHMS(plr)
 	task.spawn(function()
-		for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+		for i,v in pairs(COREGUI:GetChildren()) do
 			if v.Name == plr.Name .. '_CHMS' then
 				v:Destroy()
 			end
 		end
 		task.wait()
-		if plr.Character and plr.Name ~= Players.LocalPlayer.Name and not game.Players.LocalPlayer.PlayerGui:FindFirstChild(plr.Name..'_CHMS') then
+		if plr.Character and plr.Name ~= Players.LocalPlayer.Name and not COREGUI:FindFirstChild(plr.Name..'_CHMS') then
 			local ESPholder = Instance.new("Folder")
 			ESPholder.Name = plr.Name .. '_CHMS'
-			ESPholder.Parent = game.Players.LocalPlayer.PlayerGui
+			ESPholder.Parent = COREGUI
 			repeat task.wait(1) until plr.Character and getRoot(plr.Character) and plr.Character:FindFirstChildOfClass("Humanoid")
 			for b,n in pairs (plr.Character:GetChildren()) do
 				if (n:IsA("BasePart")) then
@@ -5441,16 +5445,16 @@ end
 
 function Locate(plr)
 	task.spawn(function()
-		for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+		for i,v in pairs(COREGUI:GetChildren()) do
 			if v.Name == plr.Name .. '_LC' then
 				v:Destroy()
 			end
 		end
 		task.wait()
-		if plr.Character and plr.Name ~= Players.LocalPlayer.Name and not game.Players.LocalPlayer.PlayerGui:FindFirstChild(plr.Name..'_LC') then
+		if plr.Character and plr.Name ~= Players.LocalPlayer.Name and not COREGUI:FindFirstChild(plr.Name..'_LC') then
 			local ESPholder = Instance.new("Folder")
 			ESPholder.Name = plr.Name .. '_LC'
-			ESPholder.Parent = game.Players.LocalPlayer.PlayerGui
+			ESPholder.Parent = COREGUI
 			repeat task.wait(1) until plr.Character and getRoot(plr.Character) and plr.Character:FindFirstChildOfClass("Humanoid")
 			for b,n in pairs (plr.Character:GetChildren()) do
 				if (n:IsA("BasePart")) then
@@ -5514,7 +5518,7 @@ function Locate(plr)
 					end
 				end)
 				local function lcLoop()
-					if game.Players.LocalPlayer.PlayerGui:FindFirstChild(plr.Name .. '_LC') then
+					if COREGUI:FindFirstChild(plr.Name .. '_LC') then
 						if plr.Character and getRoot(plr.Character) and plr.Character:FindFirstChildOfClass("Humanoid") and Players.LocalPlayer.Character and getRoot(Players.LocalPlayer.Character) and Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
 							local pos = math.floor((getRoot(Players.LocalPlayer.Character).Position - getRoot(plr.Character).Position).magnitude)
 							TextLabel.Text = 'Name: ' .. plr.Name .. ' | Health: ' .. round(plr.Character:FindFirstChildOfClass('Humanoid').Health, 1) .. ' | Studs: ' .. pos
@@ -5831,14 +5835,14 @@ local function clicktpFunc()
 		local hipHeight = humanoid and humanoid.HipHeight > 0 and (humanoid.HipHeight + 1)
 		local rootPart = getRoot(character)
 		local rootPartPosition = rootPart.Position
-		local hitPosition = IYMouse.Hit.Position
+		local hitPosition = LSMouse.Hit.Position
 		local newCFrame = CFrame.new(hitPosition, Vector3.new(rootPartPosition.X, hitPosition.Y, rootPartPosition.Z)) * CFrame.Angles(0, math.pi, 0)
 
 		rootPart.CFrame = newCFrame + Vector3.new(0, hipHeight or 4, 0)
 	end)
 end
 
-IYMouse.Button1Down:Connect(function()
+LSMouse.Button1Down:Connect(function()
 	for i,v in pairs(binds) do
 		if v.COMMAND == 'clicktp' then
 			local input = v.KEY
@@ -5852,11 +5856,11 @@ IYMouse.Button1Down:Connect(function()
 		elseif v.COMMAND == 'clickdel' then
 			local input = v.KEY
 			if input == 'RightClick' and UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton2) then
-				pcall(function() IYMouse.Target:Destroy() end)
+				pcall(function() LSMouse.Target:Destroy() end)
 			elseif input == 'LeftClick' and UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) then
-				pcall(function() IYMouse.Target:Destroy() end)
+				pcall(function() LSMouse.Target:Destroy() end)
 			elseif UserInputService:IsKeyDown(Enum.KeyCode[input:sub(14)]) then
-				pcall(function() IYMouse.Target:Destroy() end)
+				pcall(function() LSMouse.Target:Destroy() end)
 			end
 		end
 	end
@@ -5865,11 +5869,11 @@ end)
 PluginsGUI = PluginEditor.background
 
 function addPlugin(name)
-	notify('Unsupported', 'Infinite Yield RC does not support Plugins.')
+	notify('Unsupported', 'Limitless Suspension does not support Plugins.')
 end
 
 function deletePlugin(name)
-	notify('Unsupported', 'Infinite Yield RC does not support Plugins.')
+	notify('Unsupported', 'Limitless Suspension does not support Plugins.')
 end
 
 function refreshplugins(dontSave)
@@ -5906,7 +5910,7 @@ end
 
 local PluginCache
 function LoadPlugin(val,startup)
-	notify('Unsupported', 'Infinite Yield RC does not support Plugins.')
+	notify('Unsupported', 'Limitless Suspension does not support Plugins.')
 end
 
 function FindPlugins()
@@ -5932,7 +5936,7 @@ Add_3.MouseButton1Click:Connect(function()
 end)
 
 Plugins.MouseButton1Click:Connect(function()
-	notify('Unsupported', 'Infinite Yield RC does not support Plugins.')
+	notify('Unsupported', 'Limitless Suspension does not support Plugins.')
 end)
 
 Close_4.MouseButton1Click:Connect(function()
@@ -5981,16 +5985,16 @@ addcmd('clraliases', {}, function(args, speaker)
 	refreshaliases()
 end)
 
-addcmd('keepiy', {}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use queue_on_teleport)')
+addcmd('keepls', {}, function(args, speaker)
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use queue_on_teleport)')
 end)
 
-addcmd('unkeepiy', {}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use queue_on_teleport)')
+addcmd('unkeepls', {}, function(args, speaker)
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use queue_on_teleport)')
 end)
 
-addcmd('toggleunkeepiy', {}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use queue_on_teleport)')
+addcmd('toggleunkeepls', {}, function(args, speaker)
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use queue_on_teleport)')
 end)
 
 local canOpenServerinfo = true
@@ -6351,7 +6355,7 @@ addcmd('autorejoin', {'autorj'}, function(args, speaker)
 end)
 
 addcmd('serverhop', {'shop'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use httprequest)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use httprequest)')
 end)
 
 addcmd('joinplayer', {'joinp'}, function(args, speaker)
@@ -6447,11 +6451,11 @@ end)
 
 FLYING = false
 QEfly = true
-iyflyspeed = 1
+lsflyspeed = 1
 vehicleflyspeed = 1
 function sFLY(vfly)
 	repeat task.wait() until Players.LocalPlayer and Players.LocalPlayer.Character and getRoot(Players.LocalPlayer.Character) and Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-	repeat task.wait() until IYMouse
+	repeat task.wait() until LSMouse
 	if flyKeyDown or flyKeyUp then flyKeyDown:Disconnect() flyKeyUp:Disconnect() end
 
 	local T = getRoot(Players.LocalPlayer.Character)
@@ -6500,23 +6504,23 @@ function sFLY(vfly)
 			end
 		end)
 	end
-	flyKeyDown = IYMouse.KeyDown:Connect(function(KEY)
+	flyKeyDown = LSMouse.KeyDown:Connect(function(KEY)
 		if KEY:lower() == 'w' then
-			CONTROL.F = (vfly and vehicleflyspeed or iyflyspeed)
+			CONTROL.F = (vfly and vehicleflyspeed or lsflyspeed)
 		elseif KEY:lower() == 's' then
-			CONTROL.B = - (vfly and vehicleflyspeed or iyflyspeed)
+			CONTROL.B = - (vfly and vehicleflyspeed or lsflyspeed)
 		elseif KEY:lower() == 'a' then
-			CONTROL.L = - (vfly and vehicleflyspeed or iyflyspeed)
+			CONTROL.L = - (vfly and vehicleflyspeed or lsflyspeed)
 		elseif KEY:lower() == 'd' then 
-			CONTROL.R = (vfly and vehicleflyspeed or iyflyspeed)
+			CONTROL.R = (vfly and vehicleflyspeed or lsflyspeed)
 		elseif QEfly and KEY:lower() == 'e' then
-			CONTROL.Q = (vfly and vehicleflyspeed or iyflyspeed) * 2
+			CONTROL.Q = (vfly and vehicleflyspeed or lsflyspeed) * 2
 		elseif QEfly and KEY:lower() == 'q' then
-			CONTROL.E = -(vfly and vehicleflyspeed or iyflyspeed) * 2
+			CONTROL.E = -(vfly and vehicleflyspeed or lsflyspeed) * 2
 		end
 		pcall(function() workspace.CurrentCamera.CameraType = Enum.CameraType.Track end)
 	end)
-	flyKeyUp = IYMouse.KeyUp:Connect(function(KEY)
+	flyKeyUp = LSMouse.KeyUp:Connect(function(KEY)
 		if KEY:lower() == 'w' then
 			CONTROL.F = 0
 		elseif KEY:lower() == 's' then
@@ -6615,16 +6619,16 @@ local mobilefly = function(speaker, vfly)
 
 			local direction = controlModule:GetMoveVector()
 			if direction.X > 0 then
-				VelocityHandler.Velocity = VelocityHandler.Velocity + camera.CFrame.RightVector * (direction.X * ((vfly and vehicleflyspeed or iyflyspeed) * 50))
+				VelocityHandler.Velocity = VelocityHandler.Velocity + camera.CFrame.RightVector * (direction.X * ((vfly and vehicleflyspeed or lsflyspeed) * 50))
 			end
 			if direction.X < 0 then
-				VelocityHandler.Velocity = VelocityHandler.Velocity + camera.CFrame.RightVector * (direction.X * ((vfly and vehicleflyspeed or iyflyspeed) * 50))
+				VelocityHandler.Velocity = VelocityHandler.Velocity + camera.CFrame.RightVector * (direction.X * ((vfly and vehicleflyspeed or lsflyspeed) * 50))
 			end
 			if direction.Z > 0 then
-				VelocityHandler.Velocity = VelocityHandler.Velocity - camera.CFrame.LookVector * (direction.Z * ((vfly and vehicleflyspeed or iyflyspeed) * 50))
+				VelocityHandler.Velocity = VelocityHandler.Velocity - camera.CFrame.LookVector * (direction.Z * ((vfly and vehicleflyspeed or lsflyspeed) * 50))
 			end
 			if direction.Z < 0 then
-				VelocityHandler.Velocity = VelocityHandler.Velocity - camera.CFrame.LookVector * (direction.Z * ((vfly and vehicleflyspeed or iyflyspeed) * 50))
+				VelocityHandler.Velocity = VelocityHandler.Velocity - camera.CFrame.LookVector * (direction.Z * ((vfly and vehicleflyspeed or lsflyspeed) * 50))
 			end
 		end
 	end)
@@ -6639,14 +6643,14 @@ addcmd('fly',{},function(args, speaker)
 		mobilefly(speaker)
 	end
 	if args[1] and isNumber(args[1]) then
-		iyflyspeed = args[1]
+		lsflyspeed = args[1]
 	end
 end)
 
 addcmd('flyspeed', {'flysp'}, function(args, speaker)
 	local speed = args[1] or 1
 	if isNumber(speed) then
-		iyflyspeed = speed
+		lsflyspeed = speed
 	end
 end)
 
@@ -6750,22 +6754,22 @@ addcmd('float', {'platform'}, function(args, speaker)
 			local FloatValue = -3.1
 			Float.CFrame = getRoot(pchar).CFrame * CFrame.new(0,FloatValue,0)
 			notify('Float','Float Enabled (Q = down & E = up)')
-			qUp = IYMouse.KeyUp:Connect(function(KEY)
+			qUp = LSMouse.KeyUp:Connect(function(KEY)
 				if KEY == 'q' then
 					FloatValue += .5
 				end
 			end)
-			eUp = IYMouse.KeyUp:Connect(function(KEY)
+			eUp = LSMouse.KeyUp:Connect(function(KEY)
 				if KEY == 'e' then
 					FloatValue -= 0.5
 				end
 			end)
-			qDown = IYMouse.KeyDown:Connect(function(KEY)
+			qDown = LSMouse.KeyDown:Connect(function(KEY)
 				if KEY == 'q' then
 					FloatValue -= 0.5
 				end
 			end)
-			eDown = IYMouse.KeyDown:Connect(function(KEY)
+			eDown = LSMouse.KeyDown:Connect(function(KEY)
 				if KEY == 'e' then
 					FloatValue += 0.5
 				end
@@ -7172,7 +7176,7 @@ end)
 
 function deleteGuisAtPos()
 	pcall(function()
-		local guisAtPosition = Players.LocalPlayer.PlayerGui:GetGuiObjectsAtPosition(IYMouse.X, IYMouse.Y)
+		local guisAtPosition = Players.LocalPlayer.PlayerGui:GetGuiObjectsAtPosition(LSMouse.X, LSMouse.Y)
 		for _, gui in pairs(guisAtPosition) do
 			if gui.Visible == true then
 				gui:Destroy()
@@ -7199,7 +7203,7 @@ addcmd('unguidelete', {'noguidelete'}, function(args, speaker)
 end)
 
 local wasStayOpen = StayOpen
-addcmd('hideiy', {}, function(args, speaker)
+addcmd('hidels', {}, function(args, speaker)
 	isHidden = true
 	wasStayOpen = StayOpen
 	if StayOpen == true then
@@ -7208,10 +7212,10 @@ addcmd('hideiy', {}, function(args, speaker)
 	end
 	minimizeNum = 0
 	minimizeHolder()
-	if not (args[1] and tostring(args[1]) == 'nonotify') then notify('IY Hidden', 'You can press the prefix key to access the command bar') end
+	if not (args[1] and tostring(args[1]) == 'nonotify') then notify('LS Hidden', 'You can press the prefix key to access the command bar') end
 end)
 
-addcmd('showiy', {'unhideiy'}, function(args, speaker)
+addcmd('showls', {'unhidels'}, function(args, speaker)
 	isHidden = false
 	minimizeNum = -20
 	if wasStayOpen then
@@ -7224,15 +7228,15 @@ addcmd('showiy', {'unhideiy'}, function(args, speaker)
 end)
 
 addcmd('rec', {'record'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to access CoreGUI)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to access CoreGUI)')
 end)
 
 addcmd('screenshot', {'scrnshot'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to access CoreGUI)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to access CoreGUI)')
 end)
 
 addcmd('togglefs', {'togglefullscreen'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to access CoreGUI)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to access CoreGUI)')
 end)
 
 addcmd('inspect', {'examine'}, function(args, speaker)
@@ -7243,21 +7247,21 @@ addcmd('inspect', {'examine'}, function(args, speaker)
 end)
 
 addcmd('savegame', {'saveplace'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use hookmetamethod)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use hookmetamethod)')
 end)
 
 
 addcmd('clearerror', {'clearerrors'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use ClearError())')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use ClearError())')
 end)
 
 addcmd('clientantikick',{'antikick'},function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use hookmetamethod)')
+	notify('Unsupported Command','Limitless Suspension does not support this command. (Attempted to use hookmetamethod)')
 end)
 
 allow_rj = true
 addcmd('clientantiteleport', {'antiteleport'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use hookmetamethod)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use hookmetamethod)')
 end)
 
 addcmd('allowrejoin', {'allowrj'}, function(args, speaker)
@@ -7317,7 +7321,7 @@ addcmd('antilag', {'boostfps', 'lowgraphics'}, function(args, speaker)
 end)
 
 addcmd('setfpscap', {'fpscap', 'maxfps'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use setfpscap)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use setfpscap)')
 end)
 
 addcmd('notify', {}, function(args, speaker)
@@ -7345,7 +7349,7 @@ end)
 
 addcmd('noesp', {'unesp'}, function(args, speaker)
 	ESPenabled = false
-	for i,c in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+	for i,c in pairs(COREGUI:GetChildren()) do
 		if string.sub(c.Name, -4) == '_ESP' then
 			c:Destroy()
 		end
@@ -7441,7 +7445,7 @@ addcmd('nochams', {'unchams'}, function(args, speaker)
 	CHMSenabled = false
 	for i,v in pairs(Players:GetPlayers()) do
 		local chmsplr = v
-		for i,c in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+		for i,c in pairs(COREGUI:GetChildren()) do
 			if c.Name == chmsplr.Name .. '_CHMS' then
 				c:Destroy()
 			end
@@ -7460,14 +7464,14 @@ addcmd('nolocate', {'unlocate'}, function(args, speaker)
 	local players = getPlayer(args[1], speaker)
 	if args[1] then
 		for i,v in pairs(players) do
-			for i,c in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+			for i,c in pairs(COREGUI:GetChildren()) do
 				if c.Name == Players[v].Name .. '_LC' then
 					c:Destroy()
 				end
 			end
 		end
 	else
-		for i,c in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+		for i,c in pairs(COREGUI:GetChildren()) do
 			if string.sub(c.Name, -3) == '_LC' then
 				c:Destroy()
 			end
@@ -7908,7 +7912,7 @@ addcmd('thirdp', {}, function(args, speaker)
 end)
 
 addcmd('noclipcam', {'nccam'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use setconstant)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use setconstant)')
 end)
 
 addcmd('maxzoom', {}, function(args, speaker)
@@ -8031,7 +8035,7 @@ addcmd('btools', {}, function(args, speaker)
 end)
 
 addcmd('f3x', {'fex'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use loadstring() on client)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use loadstring() on client)')
 	--loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
 end)
 
@@ -8061,11 +8065,11 @@ addcmd('replicationlag', {'backtrack'}, function(args, speaker)
 end)
 
 addcmd('noprompts', {'nopurchaseprompts'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to access CoreGui)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to access CoreGui)')
 end)
 
 addcmd('showprompts', {'nopurchaseprompts'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to access CoreGui)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to access CoreGui)')
 end)
 
 promptNewRig = function(speaker, rig)
@@ -8203,11 +8207,11 @@ addcmd('render', {}, function(args, speaker)
 end)
 
 addcmd('2022materials', {'use2022materials'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use sethiddenproperty)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use sethiddenproperty)')
 end)
 
 addcmd('2022materials', {'unuse2022materials'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use sethiddenproperty)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use sethiddenproperty)')
 end)
 
 addcmd('goto', {'to'}, function(args, speaker)
@@ -8922,7 +8926,7 @@ addcmd('nolimbs', {'rlimbs'}, function(args, speaker)
 end)
 
 addcmd('nohead', {'rhead', 'headless'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use sethiddenproperty)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use sethiddenproperty)')
 end)
 
 addcmd('noarms', {'rarms'}, function(args, speaker)
@@ -9327,7 +9331,7 @@ addcmd('tptool', {'teleporttool'}, function(args, speaker)
 		if not Char or not HRP then
 			return warn("Failed to find HumanoidRootPart")
 		end
-		HRP.CFrame = CFrame.new(IYMouse.Hit.X, IYMouse.Hit.Y + 3, IYMouse.Hit.Z, select(4, HRP.CFrame:components()))
+		HRP.CFrame = CFrame.new(LSMouse.Hit.X, LSMouse.Hit.Y + 3, LSMouse.Hit.Z, select(4, HRP.CFrame:components()))
 	end)
 end)
 
@@ -9378,7 +9382,7 @@ addcmd('speed', {'ws', 'walkspeed'}, function(args, speaker)
 end)
 
 addcmd('spoofspeed', {'spoofws', 'spoofwalkspeed'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use hookmetamethod)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use hookmetamethod)')
 end)
 
 addcmd('loopspeed', {'loopws'}, function(args, speaker)
@@ -9410,7 +9414,7 @@ addcmd('unloopspeed', {'unloopws'}, function(args, speaker)
 end)
 
 addcmd('spoofjumppower', {'spoofjp'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use hookmetamethod)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use hookmetamethod)')
 end)
 
 addcmd('loopjumppower', {'loopjp', 'loopjpower'}, function(args, speaker)
@@ -9509,23 +9513,23 @@ addcmd('undab', {'unfedab'}, function(args, speaker)
 end)
 
 addcmd('console', {}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to access CoreGUI)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to access CoreGUI)')
 end)
 
 addcmd('explorer', {'dex'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command, as I could not get dex working without exploit functions (which roblox does not have)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command, as I could not get dex working without exploit functions (which roblox does not have)')
 end)
 
 addcmd('olddex', {'odex'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command.')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command.')
 end)
 
 addcmd('remotespy', {'rspy'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command, though I may add support in the future!')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command, though I may add support in the future!')
 end)
 
 addcmd('audiologger', {'alogger'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command.')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command.')
 end)
 
 local loopgoto = nil
@@ -9711,6 +9715,45 @@ function getTorso(x)
 	return x:FindFirstChild("Torso") or x:FindFirstChild("UpperTorso") or x:FindFirstChild("LowerTorso") or x:FindFirstChild("HumanoidRootPart")
 end
 
+addcmd("bang", {}, function(args, speaker)
+	execCmd("unbang")
+	task.wait()
+	local humanoid = speaker.Character:FindFirstChildWhichIsA("Humanoid")
+	bangAnim = Instance.new("Animation")
+	bangAnim.AnimationId = not r15(speaker) and "rbxassetid://148840371" or "rbxassetid://5918726674"
+	bang = humanoid:LoadAnimation(bangAnim)
+	bang:Play(0.1, 1, 1)
+	bang:AdjustSpeed(args[2] or 3)
+	bangDied = humanoid.Died:Connect(function()
+		bang:Stop()
+		bangAnim:Destroy()
+		bangDied:Disconnect()
+		bangLoop:Disconnect()
+	end)
+	if args[1] then
+		local players = getPlayer(args[1], speaker)
+		for _,v in pairs(players) do
+			local bangplr = Players[v].Name
+			local bangOffet = CFrame.new(0, 0, 1.1)
+			bangLoop = RunService.Stepped:Connect(function()
+				pcall(function()
+					local otherRoot = getTorso(Players[bangplr].Character)
+					getRoot(speaker.Character).CFrame = otherRoot.CFrame * bangOffet
+				end)
+			end)
+		end
+	end
+end)
+
+addcmd("unbang", {}, function(args, speaker)
+	if bangDied then
+		bangDied:Disconnect()
+		bang:Stop()
+		bangAnim:Destroy()
+		bangLoop:Disconnect()
+	end
+end)
+
 addcmd('carpet', {}, function(args, speaker)
 	if not r15(speaker) then
 		execCmd('uncarpet')
@@ -9873,7 +9916,7 @@ addcmd('noclickdetectorlimits', {'nocdlimits', 'removecdlimits'}, function(args,
 end)
 
 addcmd('fireclickdetectors', {'firecd', 'firecds'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use fireclickdetector)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use fireclickdetector)')
 end)
 
 addcmd('noproximitypromptlimits', {'nopplimits', 'removepplimits'}, function(args, speaker)
@@ -9885,16 +9928,16 @@ addcmd('noproximitypromptlimits', {'nopplimits', 'removepplimits'}, function(arg
 end)
 
 addcmd('fireproximityprompts', {'firepp'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use fireproximityprompt)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use fireproximityprompt)')
 end)
 
 local PromptButtonHoldBegan = nil
 addcmd('instantproximityprompts', {'instantpp'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use fireproximityprompt)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use fireproximityprompt)')
 end)
 
 addcmd('uninstantproximityprompts', {'uninstantpp'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use fireproximityprompt)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use fireproximityprompt)')
 end)
 
 addcmd('notifyping', {'ping'}, function(args, speaker)
@@ -9997,6 +10040,14 @@ addcmd('copytools', {}, function(args, speaker)
 	end
 end)
 
+addcmd('naked', {}, function(args, speaker)
+	for i,v in pairs(speaker.Character:GetDescendants()) do
+		if v:IsA("Clothing") or v:IsA("ShirtGraphic") then
+			v:Destroy()
+		end
+	end
+end)
+
 addcmd('noface', {'removeface'}, function(args, speaker)
 	for i,v in pairs(speaker.Character:GetDescendants()) do
 		if v:IsA("Decal") and v.Name == 'face' then
@@ -10068,11 +10119,11 @@ addcmd('unhatspin', {'unspinhats'}, function(args, speaker)
 end)
 
 addcmd('clearhats', {'cleanhats'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use firetouchinterest)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use firetouchinterest)')
 end)
 
 addcmd('vr', {}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command.')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command.')
 end)
 
 addcmd('split', {}, function(args, speaker)
@@ -10200,11 +10251,11 @@ end)
 
 local RS = RunService.RenderStepped
 addcmd('givetool', {'givetools'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use firetouchinterest)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use firetouchinterest)')
 end)
 
 addcmd('touchinterests', {'touchinterest', 'firetouchinterests', 'firetouchinterest'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use firetouchinterest)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use firetouchinterest)')
 end)
 
 addcmd('fullbright', {'fb', 'fullbrightness'}, function(args, speaker)
@@ -10655,7 +10706,7 @@ addcmd('kill', {'fekill'}, function(args, speaker)
 end)
 
 addcmd('handlekill', {'hkill'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use firetouchinterest)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use firetouchinterest)')
 end)
 
 local hb = RunService.Heartbeat
@@ -10862,11 +10913,11 @@ end)
 
 autoclicking = false
 addcmd('autoclick', {}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use mouse1press)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use mouse1press)')
 end)
 
 addcmd('unautoclick', {'noautoclick'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use mouse1press)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use mouse1press)')
 end)
 
 addcmd('mousesensitivity', {'ms'}, function(args, speaker)
@@ -10896,7 +10947,7 @@ addcmd('hovername', {}, function(args, speaker)
 	nbSelection.Color3 = Color3.new(1, 1, 1)
 	local function updateNameBox()
 		local t
-		local target = IYMouse.Target
+		local target = LSMouse.Target
 
 		if target then
 			local humanoid = target.Parent:FindFirstChildOfClass("Humanoid") or target.Parent.Parent:FindFirstChildOfClass("Humanoid")
@@ -10906,11 +10957,11 @@ addcmd('hovername', {}, function(args, speaker)
 		end
 
 		if t ~= nil then
-			local x = IYMouse.X
-			local y = IYMouse.Y
+			local x = LSMouse.X
+			local y = LSMouse.Y
 			local xP
 			local yP
-			if IYMouse.X > 200 then
+			if LSMouse.X > 200 then
 				xP = x - 205
 				nameBox.TextXAlignment = Enum.TextXAlignment.Right
 			else
@@ -10928,7 +10979,7 @@ addcmd('hovername', {}, function(args, speaker)
 			nbSelection.Adornee = nil
 		end
 	end
-	nbUpdateFunc = IYMouse.Move:Connect(updateNameBox)
+	nbUpdateFunc = LSMouse.Move:Connect(updateNameBox)
 end)
 
 addcmd('unhovername', {'nohovername'}, function(args, speaker)
@@ -11046,7 +11097,7 @@ addcmd('removeterrain', {'rterrain', 'noterrain'}, function(args, speaker)
 end)
 
 addcmd('clearnilinstances', {'nonilinstances', 'cni'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use getnilinstances')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use getnilinstances')
 end)
 
 addcmd('destroyheight', {'dh'}, function(args, speaker)
@@ -11068,15 +11119,15 @@ end)
 local freezingua = nil
 frozenParts = {}
 addcmd('freezeunanchored', {'freezeua'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use sethiddenproperty)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use sethiddenproperty)')
 end)
 
 addcmd('thawunanchored', {'thawua', 'unfreezeunanchored', 'unfreezeua'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use sethiddenproperty)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use sethiddenproperty)')
 end)
 
 addcmd('tpunanchored', {'tpua'}, function(args, speaker)
-	notify('Unsupported Command','Infinite Yield RC does not support this command. (Attempted to use sethiddenproperty)')
+	notify('Unsupported Command','Limitless Suspension does not support this command. (Attempted to use sethiddenproperty)')
 end)
 
 keycodeMap = {
@@ -11151,23 +11202,23 @@ autoKeyPressing = false
 cancelAutoKeyPress = nil
 
 addcmd('autokeypress', {'keypress'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use keypress)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use keypress)')
 end)
 
 addcmd('unautokeypress', {'noautokeypress', 'unkeypress', 'nokeypress'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support this command. (Attempted to use keypress)')
+	notify('Unsupported Command', 'Limitless Suspension does not support this command. (Attempted to use keypress)')
 end)
 
 addcmd('addplugin', {'plugin'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support Plugins')
+	notify('Unsupported Command', 'Limitless Suspension does not support Plugins')
 end)
 
 addcmd('removeplugin', {'deleteplugin'}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support Plugins')
+	notify('Unsupported Command', 'Limitless Suspension does not support Plugins')
 end)
 
 addcmd('reloadplugin', {}, function(args, speaker)
-	notify('Unsupported Command', 'Infinite Yield RC does not support Plugins')
+	notify('Unsupported Command', 'Limitless Suspension does not support Plugins')
 end)
 
 addcmd('removecmd', {'deletecmd'}, function(args, speaker)
@@ -11184,7 +11235,7 @@ if IsOnMobile then
 	QuickCapture.Position = UDim2.new(0.489, 0, 0, 0)
 	QuickCapture.Size = UDim2.new(0, 32, 0, 33)
 	QuickCapture.Font = Enum.Font.SourceSansBold
-	QuickCapture.Text = "IY"
+	QuickCapture.Text = "LS"
 	QuickCapture.TextColor3 = Color3.fromRGB(255, 255, 255)
 	QuickCapture.TextSize = 20.000
 	QuickCapture.TextWrapped = true
@@ -11309,7 +11360,7 @@ if aliases and #aliases > 0 then
 	refreshaliases()
 end
 
-IYMouse.Move:Connect(checkTT)
+LSMouse.Move:Connect(checkTT)
 
 task.spawn(function()
 	task.wait()
@@ -11325,5 +11376,5 @@ task.spawn(function()
 	Credits:Destroy()
 	IntroBackground:Destroy()
 	minimizeHolder()
-	if IsOnMobile then notify("Unstable Device", "On mobile, Infinite Yield may have issues or features that are not functioning correctly.") end
+	if IsOnMobile then notify("Unstable Device", "On mobile, Limitless Suspension may have issues or features that are not functioning correctly.") end
 end)
